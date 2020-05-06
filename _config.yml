@@ -43,13 +43,13 @@ title-img: "/img/avatar/avatar.jpg"
 
 # Personalize the colors in your website. Colour values can be any valid CSS colour
 
-navbar-col: "#ffec9f"
+navbar-col: "#8ed7cd"
 navbar-text-col: "#404040"
 navbar-children-col: "#F5F5F5"
 page-col: "#FFFFFF"
 link-col: "#A44B8A"
 hover-col: "#724565"
-footer-col: "#ffec9f"
+footer-col: "#8ed7cd"
 footer-text-col: "#777777"
 footer-link-col: "#A44B8A"
 
