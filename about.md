@@ -1,9 +1,9 @@
 ---
 layout: page
 title: About me
-subtitle: A list of my projects and some useful links
+subtitle: Đang bảo trì hihi
 ---
-All links will open in the same tab/window. Right-click to keep this page open and open links in a new tab/window.
+<!--All links will open in the same tab/window. Right-click to keep this page open and open links in a new tab/window.
 
 ## My website
 
@@ -28,3 +28,4 @@ Make cool avatars and icons, like the ones I am using in this blog.
 
 * [Subtle Patterns](http://subtlepatterns.com/)
 The background images of this blog come from this site.
+-->

@@ -5,7 +5,7 @@
 
 # If you are building a simple GitHub user page (https://username.github.io) then use these settings:
 
-url: "https://melyanna.github.io"
+url: "https://atnihs.github.io"
 baseurl: ""
 
 # If you are building a GitHub project page then use these settings:
@@ -18,7 +18,7 @@ baseurl: ""
 title: Shinta
 
 # Short description of your site
-description: Blog, scrapbook, and virtual space for my experiments.
+description: Noob Web Security
 
 # --- Navigation bar options --- #
 
@@ -26,9 +26,9 @@ description: Blog, scrapbook, and virtual space for my experiments.
 navbar-links:
   Blog: ""
   About: "about"
-  Tags: "https://melyanna.github.io/tags/"
+  Tags: "https://atnihs.github.io/tags/"
   # Website: "https://melyanna.net/"
-  Subscribe: "subscribe"
+  # Subscribe: "subscribe"
   Search: "search"
 
 # Image to show in the navigation bar - image must be a square (width = height)
@@ -37,7 +37,7 @@ navbar-links:
 
 # If you want to have an image logo in the top-left corner instead of the title text,
 # then specify the following parameter
-title-img: "/img/avatar/favicon.png"
+title-img: "/img/avatar/avatar.jpg"
 
 # --- Background colour/image options --- #
 
@@ -65,18 +65,21 @@ page-img: "/img/bg/noise.png"
 # Change all these values or delete the ones you don't want.
 # Important: you must keep the "name" parameter, everything else you can remove
 author:
-  name: Melyanna
+  name: Viết Khương
 
 # Select your active Social Network Links.
 # Uncomment the links you want to show in the footer and add your information to each link.
 # You can reorder the items to define the link order.
 # If you want to add a new link that isn't here, you'll need to also edit the file _data/SocialNetworks.yml
 social-network-links:
-  rss: true
-  email: "melyanna@tutanota.com"
+  facebook: shintaaa.2603
+  
 #  facebook: daattali
-  github: melyanna
-  twitter: OoMelyannaoO
+  github: atnihs
+  twitter: shinta0x99
+  email: "vietkhuong2603@gmail.com"
+  instagram: shintaanene__
+  rss: true
 #  reddit: yourname
 #  google-plus: +DeanAttali
 #  linkedin: daattali
@@ -100,7 +103,7 @@ share-links-active:
 
 # How to display the link to the website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "melyanna.github.io"  # eg. "deanattali.com/beautiful-jekyll"
+url-pretty: "atnihs.github.io"  # eg. "deanattali.com/beautiful-jekyll"
 
 # --- Web Statistics Section --- #
 
@@ -126,7 +129,7 @@ url-pretty: "melyanna.github.io"  # eg. "deanattali.com/beautiful-jekyll"
 
 # Fill in your Disqus shortname (NOT the userid) if you want to support Disqus comments
 
-disqus: "melyannagithubio"
+disqus: "atnihs.github.io"
 
 
 # To use Facebook Comments, fill in a Facebook App ID
@@ -148,7 +151,7 @@ title-separator: "-"
 # --- Don't need to touch anything below here (but you can if you want) --- #
 
 # Output options (more information on Jekyll's site)
-timezone: "Europe/Rome"
+timezone: "Asia/Ho_Chi_Minh"
 markdown: kramdown
 highlighter: rouge
 permalink: /:year-:month-:day-:title/
