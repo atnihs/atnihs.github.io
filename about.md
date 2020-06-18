@@ -29,5 +29,8 @@ Make cool avatars and icons, like the ones I am using in this blog.
 * [Subtle Patterns](http://subtlepatterns.com/)
 The background images of this blog come from this site.
 -->
+## Present
+* Newbie on the Web Security path and trying to take some time to learn about Pwned
+
 ## Useful stuff, and things I like
 * A mess in me and I'm looking for that
