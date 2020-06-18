@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About me
-subtitle: Đang bảo trì hihi
+subtitle: A bad guy pursuing infosec - hunting for things in infosec 
 ---
 <!--All links will open in the same tab/window. Right-click to keep this page open and open links in a new tab/window.
 
@@ -29,3 +29,5 @@ Make cool avatars and icons, like the ones I am using in this blog.
 * [Subtle Patterns](http://subtlepatterns.com/)
 The background images of this blog come from this site.
 -->
+## Useful stuff, and things I like
+* A mess in me and I'm looking for that
