@@ -64,7 +64,7 @@ Nhìn sơ qua có vẻ như là chèn `simple SQLi`, nên đã thử `user: admi
   Note: The site is entirely static. Dirbuster will not be useful in solving it.
 </details>
 
-Chall này có thể hiểu theo cách đơn giản nhất là thông qua 2 sites của chall thì 1 site sẽ tạo URL và site còn lại upload URL đó lên và Bot Admin sẽ truy cập thông qua URL đó trả về cookie kèm theo flag.
+Chall này có thể hiểu theo cách đơn giản nhất là thông qua 2 sites của chall thì 1 site sẽ tạo URL và site còn lại upload URL kèm XSS đó lên và Bot Admin sẽ truy cập thông qua URL đó trả về cookie kèm theo flag.
 
 ![Static-pastebin-site-1](../img/26062020/3.png)
 
