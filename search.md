@@ -1,4 +1,4 @@
----
+<!-- ---
 layout: page
 title: Search
 subtitle: Feeling lost? Look for things in my blog.
@@ -19,4 +19,4 @@ This blog uses [google search](http://google.com/cse).
     s.parentNode.insertBefore(gcse, s);
   })();
 </script>
-<gcse:search></gcse:search>
+<gcse:search></gcse:search> -->
