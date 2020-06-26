@@ -41,7 +41,8 @@ Chall nhìn qua thì nghe có vẻ phức tạp nhưng chỉ cần view source l
 
 Nhìn sơ qua có vẻ như là chèn `simple SQLi`, nên đã thử `user: admin & pwd: 1' or '1'='1` hoặc `user: admin'; /*` sẽ alert ra flag.
 
-![Login-flag](../img/26062020/2.png)
+<!-- ![Login-flag](../img/26062020/2.png) -->
+<img src="/img/26062020/2.png" alt="Login flag" align="center"/>
 
 <details>
   <summary>FLAG</summary>
@@ -118,7 +119,8 @@ https://static-pastebin.2020.redpwnc.tf/paste/#PjxpbWcgc3JjPTEgaHJlZj0xIG9uZXJyb
 
 Lúc này khi Admin Bot ghé thăm site vừa upload, đoạn mã XSS sẽ lấy cắp cookie của Admin Bot và gửi đến chính server của mình ở đây là [RequestBin](https://requestbin.com/) lúc này mình sẽ nhận lại đoạn request như thế này và kèm theo flag:
 
-![Static-pastebin-flag](../img/26062020/4.png)
+<!-- ![Static-pastebin-flag](../img/26062020/4.png) -->
+<img src="/img/26062020/4.png" alt="Static pastebin flag" align="center"/>
 
 <details>
   <summary>FLAG</summary>
