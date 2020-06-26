@@ -78,9 +78,7 @@ author:
 # You can reorder the items to define the link order.
 # If you want to add a new link that isn't here, you'll need to also edit the file _data/SocialNetworks.yml
 social-network-links:
-#   facebook: shintaaa.2603
-  
-#  facebook: daattali
+  facebook: shintaaa.2603
   github: atnihs
   twitter: shinta0x99
   email: "vietkhuong2603@gmail.com"
