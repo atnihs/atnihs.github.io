@@ -130,3 +130,58 @@ Lúc này khi Admin Bot ghé thăm site vừa upload, đoạn mã XSS sẽ lấy
 
 
 ***
+
+# panda-facts
+
+<details>
+  <summary>Challenge Description</summary>
+  
+I just found a hate group targeting my favorite animal. Can you try and find their secrets? We gotta take them down!
+
+Site: panda-facts.2020.redpwnc.tf
+Download: `index.js`
+</details>
+
+Thật ra ngay từ đầu vẫn chưa tìm ra hướng giải chỉ cắm cúi ngồi suy nghĩ về mấy function trong file index.js kia và có biết chút về NodeJS nhưng vẫn chưa mường tượng ra điều cần phải làm, nên đã hỏi thử tác giả thì hint rằng `Try to inject it`. Oh đến đây mới ngắm nghía lại đặc biệt là function này..
+
+```javascript
+async function generateToken(username) {
+    const algorithm = 'aes-192-cbc'; 
+    const key = Buffer.from(process.env.KEY, 'hex'); 
+    // Predictable IV doesn't matter here
+    const iv = Buffer.alloc(16, 0);
+
+    const cipher = crypto.createCipheriv(algorithm, key, iv);
+
+    const token = `{"integrity":"${INTEGRITY}","member":0,"username":"${username}"}`
+
+    let encrypted = '';
+    encrypted += cipher.update(token, 'utf8', 'base64');
+    encrypted += cipher.final('base64');
+    return encrypted;
+}
+```
+
+Thật sự để ý vào structure để tạo token không phải `token.username = username` mà là theo form nhất định như này..
+
+```javascript
+const token = `{"integrity":"${INTEGRITY}","member":0,"username":"${username}"}`
+```
+
+Chỉ cần filter lại cho member khác 0, mình chỉ cần set lại username là `shinta","member":1,"user":"shinta` và truy cập vào `/api/flag`..
+
+<!-- ```
+{
+  "success": true,
+  "flag": "flag{1_c4nt_f1nd_4_g00d_p4nd4_pun}"
+}
+``` -->
+<img src="/img/26062020/5.png" alt="Panda facts flag" align="center"/>
+
+<details>
+  <summary>FLAG</summary>
+  
+  flag{1_c4nt_f1nd_4_g00d_p4nd4_pun}
+</details>
+
+***
