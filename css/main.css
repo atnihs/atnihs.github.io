@@ -785,8 +785,9 @@ td.gutter {
 
 .btn-primary {
     color: #fff;
-    /* background-color: #724565; */
+   
     background-color: #EEEED1;
+     /* background-color: #724565; */
     border-color: #555;
 }
 
