@@ -21,6 +21,9 @@ Chall nhìn qua thì nghe có vẻ phức tạp nhưng chỉ cần view source l
 
 ![Inspector-flag](../img/26062020/1.png)
 
+
+***
+
 <details>
   <summary>FLAG</summary>
   
@@ -43,6 +46,9 @@ Nhìn sơ qua có vẻ như là chèn `simple SQLi`, nên đã thử `user: admi
 
 <!-- ![Login-flag](../img/26062020/2.png) -->
 <img src="/img/26062020/2.png" alt="Login flag" align="center"/>
+
+
+***
 
 <details>
   <summary>FLAG</summary>
@@ -122,6 +128,9 @@ Lúc này khi Admin Bot ghé thăm site vừa upload, đoạn mã XSS sẽ lấy
 <!-- ![Static-pastebin-flag](../img/26062020/4.png) -->
 <img src="/img/26062020/4.png" alt="Static pastebin flag" align="center"/>
 
+
+***
+
 <details>
   <summary>FLAG</summary>
   
@@ -177,6 +186,9 @@ Chỉ cần filter lại cho member khác 0, mình chỉ cần set lại usernam
 }
 ``` -->
 <img src="/img/26062020/5.png" alt="Panda facts flag" align="center"/>
+
+
+***
 
 <details>
   <summary>FLAG</summary>
@@ -237,8 +249,18 @@ Hên quá test thử phát 1 ra liền, đỡ tốn công hihi
 
 <img src="/img/26062020/6.png" alt="Static-static-bin" align="center"/>
 
+***
+
 <details>
   <summary>FLAG</summary>
   
   flag{wh0_n33d5_d0mpur1fy}
 </details>
+
+
+***
+
+Mấy chal sau theo hổng kịp, chờ ngồi đọc write-up tìm hiểu thêm thôi :waiting:
+
+
+![Alt Text](https://media.giphy.com/media/LycfkVG4L6x0Y/giphy.gif)
