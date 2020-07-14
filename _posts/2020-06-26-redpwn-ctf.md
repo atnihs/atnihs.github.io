@@ -210,7 +210,7 @@ Site: static-static-hosting.2020.redpwnc.tf
 Note: The site is entirely static. Dirbuster will not be useful in solving it.
 </details>
 
-Phần này có vẻ tác giả upgrade lên 1 tí thay vì submite text thì được submit thẳng các tags HTML, vì thế mình đoán sẽ filter `script` nên cứ submit rồi xem thử, quả như dự đoán. Code của file `index.js`:
+Phần này có vẻ tác giả upgrade lên 1 tí thay vì submit text thì được submit thẳng các tags HTML, vì thế mình đoán sẽ filter `script` nên cứ submit rồi xem thử. Code của file `index.js`:
 
 ```javascript
 function sanitize(element) {
