@@ -31,9 +31,11 @@ Khi bật cửa sổ lên sẽ thấy thẻ input và nút submit bị vô hiệ
 ![Pic1](../img/26032018/pic1.png)
 
 Vì vậy chỉ cần xóa đi và submit `admin` xem có show flag hay không?
+
 ![Pic2](../img/26032018/pic2.png)
 
 Chal này mục đích để hiểu được thuộc tính của thẻ và cách thức `turn on`.
+
 ![Pic3](../img/26032018/pic3.png)
 
 ***
@@ -54,8 +56,11 @@ Chal này mục đích để hiểu được thuộc tính của thẻ và cách
 </details>
 
 Chall yêu cầu ta xác thực đúng username và password thì mới show ra flag.
+
 ![Pic4](../img/26032018/pic4.png)
+
 Cứ F12 view-source xem và nhận ra có file `login.js` mở ra sẽ thấy id và pwd và nhập vào để nhận thông báo và flag chính là pwd.
+
 ![Pic5](../img/26032018/pic5.png)
 
 ***
@@ -76,6 +81,7 @@ Cứ F12 view-source xem và nhận ra có file `login.js` mở ra sẽ thấy i
 </details>
 
 Chall này sẽ bắt ta điền password vào prompt thì view-source như chall trước cũng sẽ thấy flag!
+
 ![Pic6](../img/26032018/pic6.png)
 
 ***
@@ -96,9 +102,11 @@ Chall này sẽ bắt ta điền password vào prompt thì view-source như chal
 </details>
 
 Về phần chall này thì yêu cầu login và check từng id và pwd mới show ra flag.
+
 ![Pic7](../img/26032018/pic7.png)
 
 Tiếp tục view-source xem có gì không, và nhận thấy file `login.js` lúc này sẽ show đoạn code xử lý form trên.
+
 ![Pic8](../img/26032018/pic8.png)
 
 Như trong hình thì biến `TheLists` sẽ cắt bởi kí tự `:` đồng thời gán vào 2 biến username = `GOD` và password = `HIDDEN` vì vậy mình lấy 2 params này check form là sẽ show flag!
@@ -121,6 +129,7 @@ Như trong hình thì biến `TheLists` sẽ cắt bởi kí tự `:` đồng th
 </details>
 
 Obfuscation là kỹ thuật che giấu code nhằm mục đích minify code, làm cho đoạn code trở nên khó đọc, khi view-source ta sẽ thấy biến obfuscator vì vậy chỉ cần unescape biến đấy là sẽ render ra flag như hình.
+
 ![Pic9](../img/26032018/pic9.png)
 
 ***
@@ -141,6 +150,7 @@ Obfuscation là kỹ thuật che giấu code nhằm mục đích minify code, l�
 </details>
 
 Ta để ý khi view-source biến `pass` tiếp tục bị encode lúc này phải decode nhiều lần để lấy được chuỗi cần tìm.
+
 ![Pic10](../img/26032018/pic10.png)
 
 Sau khi decode URL vài lần ta thu được:
