@@ -6,10 +6,10 @@
 #            site.social-network-links.<key>
 #   icon: Specify a valid fontawesome icon class
 
-facebook:
-  name: "Facebook"
-  baseURL: "https://www.facebook.com/"
-  icon: "fa-facebook"
+# facebook:
+#   name: "Facebook"
+#   baseURL: "https://www.facebook.com/"
+#   icon: "fa-facebook"
 
 github:
   name: "GitHub"
