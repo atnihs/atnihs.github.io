@@ -8,7 +8,7 @@ subtitle: A bad guy pursuing infosec - hunting for things in infosec
 * Contacts:
     - [Github](https://github.com/atnihs)
     - [Twitter](https://twitter.com/shinta0x99)
-    - [Email](vietkhuong2603@gmail.com) 
+    - [Email](mailto:vietkhuong2603@gmail.com) 
 
 ## Present
 * Newbie on the Web Security path and ... ~~.trying to take some time to learn about Pwned.~~
