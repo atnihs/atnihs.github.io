@@ -1,9 +1,9 @@
 ---
 layout: page
-title: About me
+title: whoami
 subtitle: A bad guy pursuing infosec - hunting for things in infosec 
 ---
-## whoami
+## About me
 * HoChiMinh University Of Technology (Hutech) - Information Security
 * Contacts:
     - [Github](https://github.com/atnihs)
