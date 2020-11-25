@@ -4,7 +4,7 @@ title: About me
 subtitle: A bad guy pursuing infosec - hunting for things in infosec 
 ---
 ## whoami
-* HoChiMinh University Of Technology (Hutech) - Information
+* HoChiMinh University Of Technology (Hutech) - Information Security
 * Contacts:
     - [Gmail](vietkhuong2603@gmail.com) 
     - [Twitter](https://twitter.com/shinta0x99)
