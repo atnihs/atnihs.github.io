@@ -227,6 +227,8 @@ Access disallowed. You are not logged in
 
 Thử check headers của HTTP Response với Python:
 
+**POC:**
+
 ```python
 import requests
 
@@ -314,6 +316,8 @@ Access granted. The password for natas7 is 7z3hEENjQtflzgnT29q7wAvMNfZdh0i9
 
 *Or this way*
 
+**POC:**
+
 ```python
 import requests
 import re
@@ -363,6 +367,8 @@ DBfUBfqQG69KvJvJ1iAbMoIpwSNQ9bWe
 ```
 
 *Or this way*
+
+**POC:**
 
 ```python
 import requests
