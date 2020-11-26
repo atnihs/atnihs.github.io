@@ -11,10 +11,12 @@ Wargame [Natas](https://overthewire.org/wargames/natas/) là hình thức chơi 
 
 Với mỗi cấp độ ta sẽ truy cập và lấy được pwd của level tiếp theo. Công việc của chúng ta somehow lấy được pwd đó và nhảy level. Tất cả pwd đều được lưu trữ ở **/etc/natas_webpass/** hãy để ý điều này. Ví dụ, pwd của **natas5** được lưu trữ trong **/etc/natas_webpass/natas5** và chỉ có **natas4** và **natas5** mới truy cập và đọc được.
 
+Với mỗi level giải mình sẽ cung cấp thêm POC để solve vấn đề nhanh hơn.
+
 > Let's focus on the quiz !
 
 
-{: .align-center}![Alt Text](https://media.giphy.com/media/WiM5K1e9MtEic/giphy.gif)
+![Alt Text](https://media.giphy.com/media/WiM5K1e9MtEic/giphy.gif)
 
 
 # Natas Level 0 Solution
@@ -22,7 +24,7 @@ Với mỗi cấp độ ta sẽ truy cập và lấy được pwd của level ti
 **URL:** [http://natas0.natas.labs.overthewire.org](http://natas0.natas.labs.overthewire.org) <br/>
 **Datum:** natas0-natas0
 
-Này thì đơn giản sau khi nhập user, pwd thì chỉ cần kiểm tra view-source bằng cách nhấn `Ctrl + U`, ta sẽ nhận được.
+Này thì đơn giản sau khi nhập user, pwd thì chỉ cần kiểm tra view-source bằng cách nhấn chuột phải `View page source`, ta sẽ nhận được pwd:
 ```bash
 <!--The password for natas1 is gtVrDuiDfck831PqWsLEZy5gyDz1clto -->
  ```
@@ -43,3 +45,15 @@ content = reponse.text
 
 print(re.findall('<!--The password for natas1 is (.*) -->', content))
 ```
+
+
+# Natas Level 1 Solution
+***
+**URL:** [http://natas1.natas.labs.overthewire.org](http://natas1.natas.labs.overthewire.org) <br/>
+**Datum:** natas1-gtVrDuiDfck831PqWsLEZy5gyDz1clto
+
+Ở level này thì khi nhấp chuột phải đã blocked thì mình thử dùng phím tắt `Ctrl + U`, ta sẽ nhận được pwd:
+```bash
+<!--The password for natas1 is gtVrDuiDfck831PqWsLEZy5gyDz1clto -->
+```
+
