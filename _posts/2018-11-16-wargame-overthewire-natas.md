@@ -169,6 +169,7 @@ Access disallowed. You are visiting from "" while authorized users should come o
 ```
 
 Về cách giải quyết, bạn có thể thay đổi *Referer* bằng đoạn Python đơn giản:
+
 **POC:**
 
 ```Python
