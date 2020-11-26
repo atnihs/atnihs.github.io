@@ -218,3 +218,38 @@ Access granted. The password for natas5 is iX6IOfmpN7AYOQGPwtn3fXpbaJVJcHfq
 ***
 **URL:** [http://natas5.natas.labs.overthewire.org](http://natas5.natas.labs.overthewire.org) <br/>
 **Datum:** natas5-iX6IOfmpN7AYOQGPwtn3fXpbaJVJcHfq
+
+Khi cố gắng đăng nhập, ta nhận được thông báo lỗi sau:
+
+```text
+Access disallowed. You are not logged in
+```
+
+Thử check headers của HTTP Response với Python:
+
+```python
+import requests
+
+url = "http://natas5.natas.labs.overthewire.org/"
+s = requests.Session()
+s.auth = ('natas5', 'iX6IOfmpN7AYOQGPwtn3fXpbaJVJcHfq')
+r = s.get(url)
+
+print(r.headers)
+```
+
+Ta nhận được response:
+
+```text
+{'Date': 'Fri, 16 Nov 2020 22:05:05 GMT', 'Server': 'Apache/2.4.10 (Debian)', 'Set-Cookie': 'loggedin=0', 'Vary': 'Accept-Encoding', 'Content-Encoding': 'gzip', 'Content-Length': '367', 'Keep-Alive': 'timeout=5, max=100', 'Connection': 'Keep-Alive', 'Content-Type': 'text/html; charset=UTF-8'}
+```
+
+Ta nhận thấy cookie **'Set-Cookie': 'loggedin=0'**. Ta có thể modify nó thành giá trị **1** và fresh lại trang. Ta có thể thực hiện trên **Chrome** bằng cách dùng *JavaScript Console*.
+
+![image-center](/images/16112018/wargame_1.png){: .align-center}
+
+Done !
+
+```text
+Access granted. The password for natas6 is aGoY4q2Dc6MgDq4oL4YtoKtyAg9PeHa1
+```
