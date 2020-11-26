@@ -85,3 +85,13 @@ print(content)
 ***
 **URL:** [http://natas2.natas.labs.overthewire.org](http://natas2.natas.labs.overthewire.org) <br/>
 **Datum:** natas2-ZluruAthQk7Q2MqmDeTiUij2ZvWy2mBi
+
+Nếu bạn kiểm tra source, sẽ thấy đường link thẻ img:
+```bash
+<img src="files/pixel.png">
+```
+Lúc này, chỉ cần xóa tên tệp và truy cập vào http://natas2.natas.labs.overthewire.org/files/ để lấy nội dung thư mục. Ta sẽ tìm thấy pwd ở trong file `users.txt`:
+```bash
+natas3:sJIJNW6ucpu6HPZ1ZAchaDtwd7oGrD14
+```
+
