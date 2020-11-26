@@ -21,6 +21,22 @@ Với mỗi cấp độ ta sẽ truy cập và lấy được pwd của level ti
 **Datum:** natas0-natas0
 
 Này thì đơn giản sau khi nhập user, pwd thì chỉ cần kiểm tra view-source bằng cách nhấn `Ctrl + U`, ta sẽ nhận được.
-> <!--The password for natas1 is gtVrDuiDfck831PqWsLEZy5gyDz1clto -->
+```bash
+<!--The password for natas1 is gtVrDuiDfck831PqWsLEZy5gyDz1clto -->
+ ```
 
 hoặc có thể check bằng Python
+**POC**
+```Python
+import requests
+import re
+
+user = 'natas0'
+pwd = user
+
+url = 'http://%s.natas.labs.overthewire.org/' % user
+reponse = requests.get(url,auth = (user,pwd))
+content = reponse.text
+
+print(re.findall('<!--The password for natas1 is (.*) -->', content))
+```
