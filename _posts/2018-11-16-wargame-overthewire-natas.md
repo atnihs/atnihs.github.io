@@ -27,7 +27,8 @@ Này thì đơn giản sau khi nhập user, pwd thì chỉ cần kiểm tra view
 <!--The password for natas1 is gtVrDuiDfck831PqWsLEZy5gyDz1clto -->
  ```
 
-hoặc có thể check bằng Python
+hoặc có thể check bằng Python <br/>
+
 **POC**
 ```Python
 import requests
