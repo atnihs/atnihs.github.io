@@ -14,7 +14,7 @@ Với mỗi cấp độ ta sẽ truy cập và lấy được pwd của level ti
 > Let's focus on the quiz !
 
 
-![Alt Text](https://media.giphy.com/media/WiM5K1e9MtEic/giphy.gif){: .align-center}
+{: .align-center}![Alt Text](https://media.giphy.com/media/WiM5K1e9MtEic/giphy.gif)
 
 
 # Natas Level 0 Solution
