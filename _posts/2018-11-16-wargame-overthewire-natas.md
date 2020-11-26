@@ -693,7 +693,7 @@ import json
 ciphertext = b"ClVLIh4ASCsCBE8lAxMacFMZV2hdVVotEhhUJQNVAmhSEV4sFxFeaAw="
 ciphertext = base64.decodebytes(ciphertext)
 plaintext = {"showpassword":"no", "bgcolor":"#ffffff"}
-# Here, we remove the space as JSON implementation in Python is different from PHP
+
 plaintext = json.dumps(plaintext).encode('utf-8').replace(b" ", b"")
 
 def xor_decrypt(plaintext, ciphertext):
