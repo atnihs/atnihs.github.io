@@ -750,5 +750,5 @@ The password for natas12 is EDXp0pS26wLKHZy1rDBPUZk0RKfLGIR3
 
 Cheering ...
 
-![Alt Text](https://giphy.com/gifs/l0MYKV4wIQzQzz2M0/html5)
+![Alt Text](https://media.giphy.com/media/l0MYKV4wIQzQzz2M0/giphy.gif)
 
