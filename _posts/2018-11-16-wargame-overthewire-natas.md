@@ -386,3 +386,70 @@ content = response.text
 print(content)
 ```
 
+
+
+
+***
+# Natas Level 8 Solution
+***
+**URL:** [http://natas8.natas.labs.overthewire.org](http://natas8.natas.labs.overthewire.org) <br/>
+**Datum:** natas8-DBfUBfqQG69KvJvJ1iAbMoIpwSNQ9bWe
+
+Level này ta lại tiếp tục nhận source code là *PHP*, và đoạn code như sau:
+
+```php
+<?
+
+$encodedSecret = "3d3d516343746d4d6d6c315669563362";
+
+function encodeSecret($secret) {
+    return bin2hex(strrev(base64_encode($secret)));
+}
+
+if(array_key_exists("submit", $_POST)) {
+    if(encodeSecret($_POST['secret']) == $encodedSecret) {
+    print "Access granted. The password for natas9 is <censored>";
+    } else {
+    print "Wrong secret";
+    }
+}
+?>
+```
+
+Ở đây sẽ kiểm tra đầu vào của biến *secret* sao cho bằng với `'3d3d516343746d4d6d6c315669563362'`, nhưng nó đã bị modify bởi hàm *encodeSecret()* phía trên, vì thế ta chỉ cần đảo ngược nó bằng PHP hoặc Python gì cũng bypass qua cả.
+
+**PHP:**
+
+```php
+<?php
+    echo(base64_decode(strrev(hex2bin("3d3d516343746d4d6d6c315669563362"))));
+```
+
+**Python:**
+
+```python
+import base64
+
+secret = "3d3d516343746d4d6d6c315669563362"
+secret = bytes.fromhex(secret)
+secret = secret[::-1]
+secret = base64.decodebytes(secret)
+
+print(secret)
+
+# Result = oubWYf2kBq
+```
+
+Nhập key vào ta nhận được pwd lên level tiếp theo:
+
+```text
+Access granted. The password for natas9 is W0mMhUcRRnG8dcghE4qvk3JA9lGt8nDl
+```
+
+
+
+***
+# Natas Level 9 Solution
+***
+**URL:** [http://natas9.natas.labs.overthewire.org](http://natas9.natas.labs.overthewire.org) <br/>
+**Datum:** natas9-W0mMhUcRRnG8dcghE4qvk3JA9lGt8nDl
