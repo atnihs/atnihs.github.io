@@ -12,6 +12,8 @@ Wargame [Natas](https://overthewire.org/wargames/natas/) là hình thức chơi 
 Với mỗi cấp độ ta sẽ truy cập và lấy được pwd của level tiếp theo. Công việc của chúng ta somehow lấy được pwd đó và nhảy level. Tất cả pwd đều được lưu trữ ở **/etc/natas_webpass/** hãy để ý điều này. Ví dụ, pwd của **natas5** được lưu trữ trong **/etc/natas_webpass/natas5** và chỉ có **natas4** và **natas5** mới truy cập và đọc được.
 
 > Let's focus on the quiz !
+
+
 ![Alt Text](https://media.giphy.com/media/WiM5K1e9MtEic/giphy.gif){: .align-center}
 
 
