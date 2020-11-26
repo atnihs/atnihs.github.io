@@ -35,7 +35,7 @@ Này thì đơn giản sau khi nhập user, pwd thì chỉ cần kiểm tra view
 hoặc có thể check bằng Python <br/>
 
 **POC:**
-```Python
+```python
 import requests
 import re
 
@@ -65,7 +65,7 @@ print(re.findall('<!--The password for natas1 is (.*) -->', content))
 ```
 
 **POC:**
-```Python
+```python
 import requests
 import re
 
@@ -100,7 +100,7 @@ natas3:sJIJNW6ucpu6HPZ1ZAchaDtwd7oGrD14
 ```
 
 **POC:**
-```Python
+```python
 import requests
 import re
 
@@ -139,7 +139,7 @@ natas4:Z9tkRkWmpt9Qr7XrR5jWRkgOU901swEZ
 ```
 
 **POC:**
-```Python
+```python
 import requests
 import re
 
@@ -172,7 +172,7 @@ Về cách giải quyết, bạn có thể thay đổi *Referer* bằng đoạn 
 
 **POC:**
 
-```Python
+```python
 import requests
 import re
 
@@ -191,7 +191,7 @@ print(re.findall('The password for natas5 is (.*)', content))
 
 *Or this way*
 
-```Python
+```python
 import requests
 
 url = 'http://natas4.natas.labs.overthewire.org/'
