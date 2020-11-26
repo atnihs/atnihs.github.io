@@ -43,6 +43,7 @@ url = 'http://%s.natas.labs.overthewire.org/' % user
 reponse = requests.get(url,auth = (user,pwd))
 content = reponse.text
 
+#print(content)
 print(re.findall('<!--The password for natas1 is (.*) -->', content))
 ```
 
@@ -54,6 +55,26 @@ print(re.findall('<!--The password for natas1 is (.*) -->', content))
 
 Ở level này thì khi nhấp chuột phải đã blocked thì mình thử dùng phím tắt `Ctrl + U`, ta sẽ nhận được pwd:
 ```bash
-<!--The password for natas1 is gtVrDuiDfck831PqWsLEZy5gyDz1clto -->
+<!--The password for natas2 is ZluruAthQk7Q2MqmDeTiUij2ZvWy2mBi -->
 ```
 
+**POC:**
+```Python
+import requests
+import re
+
+user = 'natas1'
+pwd = 'gtVrDuiDfck831PqWsLEZy5gyDz1clto'
+
+url = 'http://%s.natas.labs.overthewire.org/' % user
+reponse = requests.get(url,auth = (user,pwd))
+content = reponse.text
+
+print(content)
+#print(re.findall('<!--The password for natas2 is (.*) -->', content))
+```
+
+# Natas Level 2 Solution
+***
+**URL:** [http://natas1.natas.labs.overthewire.org](http://natas1.natas.labs.overthewire.org) <br/>
+**Datum:** natas2-ZluruAthQk7Q2MqmDeTiUij2ZvWy2mBi
