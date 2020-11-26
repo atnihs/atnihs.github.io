@@ -33,7 +33,7 @@ Này thì đơn giản sau khi nhập user, pwd thì chỉ cần kiểm tra view
 
 hoặc có thể check bằng Python <br/>
 
-**POC**
+**POC:**
 ```Python
 import requests
 import re
@@ -83,5 +83,5 @@ print(content)
 ***
 # Natas Level 2 Solution
 ***
-**URL:** [http://natas1.natas.labs.overthewire.org](http://natas1.natas.labs.overthewire.org) <br/>
+**URL:** [http://natas2.natas.labs.overthewire.org](http://natas2.natas.labs.overthewire.org) <br/>
 **Datum:** natas2-ZluruAthQk7Q2MqmDeTiUij2ZvWy2mBi
