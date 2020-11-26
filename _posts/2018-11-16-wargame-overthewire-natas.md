@@ -15,5 +15,8 @@ Với mỗi cấp độ ta sẽ truy cập và lấy được pwd của level ti
 
 # Natas Level 0 Solution
 ***
-[URL](http://natas0.natas.labs.overthewire.org/)
-**Datum**: natas0-natas0
+**URL:** http://natas0.natas.labs.overthewire.org/
+**Datum:** natas0-natas0
+
+Này thì đơn giản sau khi nhập user, pwd thì chỉ cần kiểm tra view-source bằng cách nhấn `Ctrl + U`, ta sẽ nhận được.
+> <!--The password for natas1 is gtVrDuiDfck831PqWsLEZy5gyDz1clto -->
