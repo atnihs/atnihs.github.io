@@ -19,6 +19,8 @@ Với mỗi level giải mình sẽ cung cấp thêm POC để solve vấn đề
 ![Alt Text](https://media.giphy.com/media/WiM5K1e9MtEic/giphy.gif)
 
 
+
+***
 # Natas Level 0 Solution
 ***
 **URL:** [http://natas0.natas.labs.overthewire.org](http://natas0.natas.labs.overthewire.org) <br/>
@@ -48,6 +50,8 @@ print(re.findall('<!--The password for natas1 is (.*) -->', content))
 ```
 
 
+
+***
 # Natas Level 1 Solution
 ***
 **URL:** [http://natas1.natas.labs.overthewire.org](http://natas1.natas.labs.overthewire.org) <br/>
@@ -74,6 +78,9 @@ print(content)
 #print(re.findall('<!--The password for natas2 is (.*) -->', content))
 ```
 
+
+
+***
 # Natas Level 2 Solution
 ***
 **URL:** [http://natas1.natas.labs.overthewire.org](http://natas1.natas.labs.overthewire.org) <br/>
