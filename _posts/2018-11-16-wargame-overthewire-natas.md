@@ -27,6 +27,7 @@ Với mỗi level giải mình sẽ cung cấp thêm POC để solve vấn đề
 **Datum:** natas0-natas0
 
 Này thì đơn giản sau khi nhập user, pwd thì chỉ cần kiểm tra view-source bằng cách nhấn chuột phải `View page source`, ta sẽ nhận được pwd:
+
 ```bash
 <!--The password for natas1 is gtVrDuiDfck831PqWsLEZy5gyDz1clto -->
  ```
@@ -58,6 +59,7 @@ print(re.findall('<!--The password for natas1 is (.*) -->', content))
 **Datum:** natas1-gtVrDuiDfck831PqWsLEZy5gyDz1clto
 
 Ở level này thì khi nhấp chuột phải đã blocked thì mình thử dùng phím tắt `Ctrl + U`, ta sẽ nhận được pwd:
+
 ```bash
 <!--The password for natas2 is ZluruAthQk7Q2MqmDeTiUij2ZvWy2mBi -->
 ```
@@ -87,10 +89,12 @@ print(content)
 **Datum:** natas2-ZluruAthQk7Q2MqmDeTiUij2ZvWy2mBi
 
 Nếu bạn kiểm tra source, sẽ thấy đường link thẻ img:
+
 ```bash
 <img src="files/pixel.png">
 ```
 Lúc này, chỉ cần xóa tên tệp và truy cập vào [http://natas2.natas.labs.overthewire.org/files/](http://natas2.natas.labs.overthewire.org/files/) để lấy nội dung thư mục. Ta sẽ tìm thấy pwd ở trong file `users.txt`:
+
 ```bash
 natas3:sJIJNW6ucpu6HPZ1ZAchaDtwd7oGrD14
 ```
@@ -119,4 +123,11 @@ print(re.findall('natas3:(.*)', content))
 **URL:** [http://natas3.natas.labs.overthewire.org](http://natas3.natas.labs.overthewire.org) <br/>
 **Datum:** natas3-sJIJNW6ucpu6HPZ1ZAchaDtwd7oGrD14
 
+Về level này, ta nên biết 1 tí concept về [robots.txt](https://developers.google.com/search/docs/advanced/robots/intro) đơn giản là một tệp ở gốc trang web của bạn cho biết những phần thuộc trang web bạn không muốn cấp quyền truy cập cho trình thu thập dữ liệu của công cụ tìm kiếm.
 
+Vì thế ta thử check file *robots.txt* trên trang web ([http://natas3.natas.labs.overthewire.org/robots.txt](http://natas3.natas.labs.overthewire.org/robots.txt)), ta sẽ thấy được folder chứa pwd: 
+
+```bash
+User-agent: *
+Disallow: /s3cr3t/
+```
