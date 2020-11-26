@@ -246,7 +246,7 @@ Ta nhận được response:
 
 Ta nhận thấy cookie **'Set-Cookie': 'loggedin=0'**. Ta có thể modify nó thành giá trị **1** và fresh lại trang. Ta có thể thực hiện trên **Chrome** bằng cách dùng *JavaScript Console*.
 
-![image-center](/images/16112018/wargame_1.png){: .align-center}
+![image-center](../images/16112018/wargame_1.png){: .align-center}
 
 Done !
 
