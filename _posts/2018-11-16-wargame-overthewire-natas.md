@@ -110,3 +110,13 @@ content = reponse.text
 #print(content)
 print(re.findall('natas3:(.*)', content))
 ```
+
+
+
+***
+# Natas Level 3 Solution
+***
+**URL:** [http://natas3.natas.labs.overthewire.org](http://natas3.natas.labs.overthewire.org) <br/>
+**Datum:** natas3-sJIJNW6ucpu6HPZ1ZAchaDtwd7oGrD14
+
+
