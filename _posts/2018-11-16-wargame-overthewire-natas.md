@@ -13,5 +13,7 @@ Với mỗi cấp độ ta sẽ truy cập và lấy được pwd của level ti
 
 > Let's focus on the quiz !
 
-
-
+# Natas Level 0 Solution
+***
+[URL](http://natas0.natas.labs.overthewire.org/)
+**Datum**: natas0-natas0
