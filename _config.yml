@@ -5,8 +5,8 @@
 
 # If you are building a simple GitHub user page (https://username.github.io) then use these settings:
 
-url: "https://atnihs.github.io"
-baseurl: ""
+url: 'https://atnihs.github.io'
+baseurl: ''
 
 # If you are building a GitHub project page then use these settings:
 #url: "https://username.github.io/projectname"
@@ -24,9 +24,9 @@ description: S H I N T A
 
 # List of links in the navigation bar
 navbar-links:
-  Blog: ""
-  About: "about"
-  Tags: "https://atnihs.github.io/tags/"
+  Blog: ''
+  About: 'about'
+  Tags: 'https://atnihs.github.io/tags/'
   # Website: "https://melyanna.net/"
   # Subscribe: "subscribe"
   # Search: "search"
@@ -37,34 +37,32 @@ navbar-links:
 
 # If you want to have an image logo in the top-left corner instead of the title text,
 # then specify the following parameter
-title-img: "/img/avatar/avatar.jpg"
+title-img: '/img/avatar/avatar.jpg'
 
 # --- Background colour/image options --- #
 
 # Personalize the colors in your website. Colour values can be any valid CSS colour
 
-
-
 #navbar-col: "#ffec9f"
-navbar-col: "#F5F5F5"
-navbar-text-col: "#404040"
-navbar-children-col: "#F5F5F5"
-page-col: "#FFFFFF"
+navbar-col: '#F5F5F5'
+navbar-text-col: '#404040'
+navbar-children-col: '#F5F5F5'
+page-col: '#FFFFFF'
 ##link-col: "#A44B8A"
-link-col: "#000000"
+link-col: '#000000'
 # hover-col: "#724565"
-hover-col: "#4682B4"
-footer-col: "#F5F5F5"
-footer-text-col: "#777777"
+hover-col: '#4682B4'
+footer-col: '#F5F5F5'
+footer-text-col: '#777777'
 # footer-link-col: "#A44B8A"
-footer-link-col: "#000000"
+footer-link-col: '#000000'
 
 # Alternatively, the navbar, footer, and page background can be set to use background images
 # instead of colour
 
-navbar-img: "/img/bg/rice-paper-3.png"
-footer-img: "/img/bg/rice-paper-3.png"
-page-img: "/img/bg/noise.png"
+navbar-img: '/img/bg/rice-paper-3.png'
+footer-img: '/img/bg/rice-paper-3.png'
+page-img: '/img/bg/noise.png'
 
 # --- Footer options --- #
 
@@ -80,9 +78,9 @@ author:
 social-network-links:
   github: atnihs
   twitter: shinta0x99
-# instagram: shintaanene__
-# facebook: shintaaa.2603
-  email: "vietkhuong2603@gmail.com"
+  # facebook: shintaaa.2603
+  email: 'vietkhuong2603@gmail.com'
+  instagram: v.khuoq_
 
   # rss: true
 #  reddit: yourname
@@ -108,7 +106,7 @@ share-links-active:
 
 # How to display the link to the website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "atnihs.github.io"  # eg. "deanattali.com/beautiful-jekyll"
+url-pretty: 'atnihs.github.io' # eg. "deanattali.com/beautiful-jekyll"
 
 # --- Web Statistics Section --- #
 
@@ -134,8 +132,7 @@ url-pretty: "atnihs.github.io"  # eg. "deanattali.com/beautiful-jekyll"
 
 # Fill in your Disqus shortname (NOT the userid) if you want to support Disqus comments
 
-disqus: "atnihs.github.io"
-
+disqus: 'atnihs.github.io'
 
 # To use Facebook Comments, fill in a Facebook App ID
 # fb_comment_id: ""
@@ -151,12 +148,12 @@ excerpt_length: 50
 
 # Character used to separate site title and description in HTML document title
 # and RSS feed title
-title-separator: "-"
+title-separator: '-'
 
 # --- Don't need to touch anything below here (but you can if you want) --- #
 
 # Output options (more information on Jekyll's site)
-timezone: "Asia/Ho_Chi_Minh"
+timezone: 'Asia/Ho_Chi_Minh'
 markdown: kramdown
 highlighter: rouge
 permalink: /:year-:month-:day-:title/
@@ -167,19 +164,17 @@ kramdown:
 
 # Default YAML values (more information on Jekyll's site)
 defaults:
-  -
-    scope:
-      path: ""
-      type: "posts"
+  - scope:
+      path: ''
+      type: 'posts'
     values:
-      layout: "post"
-      comments: true  # add comments to all blog posts
+      layout: 'post'
+      comments: true # add comments to all blog posts
       social-share: true # add social media sharing buttons to all blog posts
-  -
-    scope:
-      path: "" # all files
+  - scope:
+      path: '' # all files
     values:
-      layout: "page"
+      layout: 'page'
       show-avatar: true
 
 # Use tags index page and make tags on each post clickable
@@ -212,45 +207,44 @@ prose:
     - /js
   metadata:
     _posts:
-      - name: "layout"
+      - name: 'layout'
         field:
-          element: "hidden"
-          value: "post"
-      - name: "title"
+          element: 'hidden'
+          value: 'post'
+      - name: 'title'
         field:
-          element: "text"
-          label: "Post title"
-          placeholder: "Title"
+          element: 'text'
+          label: 'Post title'
+          placeholder: 'Title'
           alterable: true
-      - name: "subtitle"
+      - name: 'subtitle'
         field:
-          element: "textarea"
-          label: "Subtitle"
-          placeholder: "A description of your post."
+          element: 'textarea'
+          label: 'Subtitle'
+          placeholder: 'A description of your post.'
           alterable: true
-      - name: "date"
+      - name: 'date'
         field:
-          element: "text"
-          label: "Date"
-          help: "Enter date of post."
-          placeholder: "yyyy-mm-dd"
+          element: 'text'
+          label: 'Date'
+          help: 'Enter date of post.'
+          placeholder: 'yyyy-mm-dd'
           alterable: true
-      - name: "image"
+      - name: 'image'
         field:
-          element: "text"
-          label: "Image"
-          help: "Add a thumbnail image to your post."
-          placeholder: "Thumbnail"
+          element: 'text'
+          label: 'Image'
+          help: 'Add a thumbnail image to your post.'
+          placeholder: 'Thumbnail'
           alterable: true
-      - name: "published"
+      - name: 'published'
         field:
-          element: "checkbox"
-          label: "Publish"
-          help: "Check to publish post, uncheck to hide."
+          element: 'checkbox'
+          label: 'Publish'
+          help: 'Check to publish post, uncheck to hide.'
 
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
-
 # Beautiful Jekyll / Dean Attali
 # 2fc73a3a967e97599c9763d05e564189
