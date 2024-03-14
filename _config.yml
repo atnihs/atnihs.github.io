@@ -69,7 +69,7 @@ page-img: '/img/bg/noise.png'
 # Change all these values or delete the ones you don't want.
 # Important: you must keep the "name" parameter, everything else you can remove
 author:
-  name: Viết Khương
+  name: Viet Khuong
 
 # Select your active Social Network Links.
 # Uncomment the links you want to show in the footer and add your information to each link.
@@ -80,7 +80,7 @@ social-network-links:
   twitter: shinta0x99
   # facebook: shintaaa.2603
   email: 'vietkhuong2603@gmail.com'
-  instagram: v.khuoq_
+  linkedin: vkhuongdev
 
   # rss: true
 #  reddit: yourname
