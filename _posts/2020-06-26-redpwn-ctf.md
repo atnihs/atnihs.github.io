@@ -263,4 +263,4 @@ Hên quá test thử phát 1 ra liền, đỡ tốn công hihi
 Mấy chal sau theo hổng kịp, chờ ngồi đọc write-up tìm hiểu thêm thôi :waiting:
 
 
-![Alt Text](https://media.giphy.com/media/LycfkVG4L6x0Y/giphy.gif)
+![Alt Text](https://media.giphy.com/media/LycfkVG4L6x0Y/giphy.gif)https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWYwNGdnanRwcHo1cWxxM3pkam5zbGtpbm91MGlwb2czZGNxemRweCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/V2JgPXdvuCKrDo9uem/giphy.gif
