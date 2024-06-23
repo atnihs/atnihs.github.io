@@ -66,10 +66,10 @@ linkedin:
 #   baseURL: "https://www.youtube.com/"
 #   icon: "fa-youtube"
 
-# spotify:
-#   name: "Spotify"
-#   baseURL: "https://open.spotify.com/user/"
-#   icon: "fa-spotify"
+spotify:
+  name: "Spotify"
+  baseURL: "https://open.spotify.com/user/"
+  icon: "fa-spotify"
 
 # telephone:
 #   name: "Phone"
