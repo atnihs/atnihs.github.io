@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Một chút buồn...
+title: Một chút trầm tư...
 tags: [myself]
 ---
 Nghe một chút nhạc nào ...
-{% include music.html id="_hP8T3hcmoo" %}
+{% include music.html %}
