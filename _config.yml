@@ -80,7 +80,7 @@ social-network-links:
   twitter: shinta0x99
   # facebook: shintaaa.2603
   email: 'vietkhuong.dev@gmail.com'
-  linkedin: vkhuongdev
+  # linkedin: vkhuongdev
   spotify: fdzydxt2is06g3c0dy8dt8nzu
 
   # rss: true
@@ -102,7 +102,7 @@ share-links-active:
   twitter: true
   facebook: true
   google: true
-  linkedin: true
+  # linkedin: true
 
 # How to display the link to the website in the footer
 # Remove this if you don't want a link in the footer

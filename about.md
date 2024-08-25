@@ -9,7 +9,7 @@ subtitle: A bad guy pursuing infosec - hunting for things in infosec - intending
     - [Github](https://github.com/atnihs)
     - [Twitter](https://twitter.com/shinta0x99)
     - [Email](mailto:vietkhuong.dev@gmail.com)
-    - [LinkedIn](https://linkedin.com/in/vkhuongdev)
+    <!-- - [LinkedIn](https://linkedin.com/in/vkhuongdev) -->
 
 <!-- ## Present
 * Jump into the pit of Web and ... ~~.trying to take some time to learn about Security and Hunting for things in infosec.~~ -->
