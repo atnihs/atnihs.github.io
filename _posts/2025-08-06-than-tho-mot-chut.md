@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Than thở một chút **06082025** ...
+title: Than thở một chút ...
 tags: [myself]
 ---
 
