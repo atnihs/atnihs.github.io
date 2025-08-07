@@ -40,7 +40,6 @@ Từ cuối lớp 9 đã sống một mình xa nhà vì lên huyện học, từ
 
 > **Chỉ là bây giờ, có vẻ ...**
 
-Hãy sống thật là hạnh phúc và bình yên nhaaa...
 {% include music_06082025.html %}
 
 Đi ngủ thôi chứ sốt mà thức khuya làm gì nhỉ cũng 23h hơn rồi 😴
