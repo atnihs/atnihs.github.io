@@ -40,5 +40,5 @@ Từ cuối lớp 9 đã sống một mình xa nhà vì lên huyện học, từ
 
 > **Chỉ là bây giờ, có vẻ ...**
 
-Nghe một chút nhạc nào ...
+Hãy sống thật là hạnh phúc và bình yên nhaaa...
 {% include music_06082025.html %}
