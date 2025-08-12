@@ -801,3 +801,5 @@ a.btn.btn-primary.tag-btn:hover {
 .btn-google:hover{color:#fff;background-color:#c23321 !important;border-color:rgba(0,0,0,0.2)}
 .btn-instagram:hover{color:#fff;background-color:#305777 !important;border-color:rgba(0,0,0,0.2)}
 .btn-twitter:hover{color:#fff;background-color:#2795e9 !important;border-color:rgba(0,0,0,0.2)}
+
+@import "dark-theme";
