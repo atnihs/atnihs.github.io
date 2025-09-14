@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Khi tôi ngồi ở cả hai phía bàn phỏng vấn 😣😣😣
+title: Khi ngồi ở cả hai phía bàn phỏng vấn 😣
 tags: [interview-journey, personal-growth]
 ---
 
